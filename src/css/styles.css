@@ -1,0 +1,80 @@
+body{
+    font-family: 'Open Sans', sans-serif; 
+}
+
+.brand-text{
+    color: #24a464 !important;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.brand-background{
+    background-color: #24a464 !important;
+    color:#fff !important;
+    font-weight: bold;
+}
+
+.brand-button{
+    background-color: #24a464 !important;
+    color:#fff !important;
+    border: 1px solid #24a464;
+}
+
+.brand-button:disabled{
+    cursor: not-allowed;
+}
+
+.brand-button:hover{
+    background-color: #fff !important;
+    color:#24a464 !important;
+    border: 1px solid #24a464;
+    
+}
+
+.brand-centered{
+    margin: auto;
+}
+
+.brand-active{
+    border-bottom: 2px solid #24a464;
+    font-weight: bold;
+    /*box-shadow: rgba(47,72,88, 0.15) 1.95px 1.95px 2.6px;*/
+}
+
+.brand-table{
+    width: 100%;
+
+}
+
+.brand-table-th{
+    width: 30%;
+    border-bottom: 2px solid #24a464;
+    text-align: center;
+}
+
+.brand-table-td{
+    width: 30%;
+    border-bottom: .01em solid rgba(100, 112, 129, .25);
+    text-align: center;
+}
+
+.amount-input { 
+    text-align: right; 
+}
+
+.balance-header-container{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.balance-title{
+    width: 50%;
+    float: left;
+}
+
+.balance-amount{
+    width: 50%;
+    margin-left: 200px;
+    text-align: right;
+    font-weight: bolder;
+}
