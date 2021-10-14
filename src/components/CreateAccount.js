@@ -20,13 +20,13 @@ function CreateAccount(){
         }
         // validate email format
         if(label === "email" && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(field)){
-            errorMessage = `Error: email invalid format`;
+            errorMessage = `Error: Email has an invalid format`;
             errorHandler(errorMessage);
             return false;
         }
         // validate password
         if(label === "password" && field.length <8){
-            errorMessage = `Error: password should have at least 8 chatacters`;
+            errorMessage = `Error: Password should have at least 8 characters`;
             errorHandler(errorMessage);
             return false;
         }

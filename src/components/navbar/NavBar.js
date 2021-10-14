@@ -21,7 +21,7 @@ class NavBar extends Component {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="p-3" onClick={this.resetState}>
           <img src="bank-logo.png" alt="BadBank" width="65px" />
-          <a className="navbar-brand brand-text" href="#">
+          <a className="navbar-brand brand-text" href="#/">
             BadBank
           </a>
         </div>
