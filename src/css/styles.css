@@ -62,7 +62,7 @@ body{
     text-align: right; 
 }
 
-.balance-header-container{
+.balance-container{
     width: 100%;
     margin: 0 auto;
 }
@@ -77,4 +77,15 @@ body{
     margin-left: 200px;
     text-align: right;
     font-weight: bolder;
+}
+
+.label-title{
+    width: 50%;
+    float: left;
+    padding-top: 5px;
+}
+
+.amount-container{
+    width: 50%;
+    margin-left: 50%;
 }

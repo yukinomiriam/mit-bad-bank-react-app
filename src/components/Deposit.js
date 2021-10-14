@@ -1,6 +1,7 @@
 import { UserContext } from "../context";
 import React from "react";
 import Card from "./Card";
+import CurrencyFormat from "react-currency-format";
 
 function Deposit() {
   const ctx = React.useContext(UserContext);
@@ -19,6 +20,10 @@ function Deposit() {
 
     if (amt !== "" && !Number(amt)) {
       errorHandler("Error: Please introduce numbers only");
+      return setValidTransaction(false);
+    }
+
+    if (amt === "") {
       return setValidTransaction(false);
     }
 
@@ -52,33 +57,48 @@ function Deposit() {
         status={status}
         body={
           <>
-            <div className="balance-header-container">
+            <div className="balance-container">
               <div className="balance-title">
                 <h5>Balance: </h5>
               </div>
               <div className="balance-amount">
-                <h5>{total}</h5>
+                <h5>
+                  <CurrencyFormat
+                    value={total.toFixed(2)}
+                    displayType={"text"}
+                    thousandSeparator={true}
+                    prefix={"$"}
+                  />
+                </h5>
               </div>
             </div>
             <br />
-            Deposit Amount:
+            <div className="balance-container">
+              <div className="label-title">
+                <label> Deposit Amount:</label>
+              </div>
+              <div className="amount-container">
+                <input
+                  id="amtDeposit"
+                  placeholder="0"
+                  className="form-control amount-input"
+                  onChange={validateDeposit}
+                ></input>
+              </div>
+            </div>
             <br />
-            <br />
-            <input
-              id="amtDeposit"
-              placeholder="0"
-              className="form-control amount-input"
-              onChange={validateDeposit}
-            ></input>
-            <br />
-            <button
-              type="submit"
-              className="btn brand-button"
-              onClick={handleSubmit}
-              disabled={!validTransaction}
-            >
-              Submit Deposit
-            </button>
+            <div className="container my-3 bg-light">
+              <div className="col-md-12 text-center">
+              <button
+                type="submit"
+                className="btn brand-button"
+                onClick={handleSubmit}
+                disabled={!validTransaction}
+              >
+                Submit Deposit
+              </button>
+              </div>
+            </div>
           </>
         }
       />
