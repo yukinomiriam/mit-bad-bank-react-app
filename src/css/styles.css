@@ -1,91 +1,168 @@
-body{
-    font-family: 'Open Sans', sans-serif; 
+
+
+.brand-text {
+  /*color: #24a464 !important;*/
+  background: -webkit-linear-gradient(#14633b, #24a464);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  padding-left: 10px;
 }
 
-.brand-text{
-    color: #24a464 !important;
-    font-weight: bold;
-    padding-left: 10px;
+.brand-background {
+  background-image: linear-gradient(#14633b, #24a464) !important;
+  color: #fff !important;
+  letter-spacing: 1px;
 }
 
-.brand-background{
-    background-color: #24a464 !important;
-    color:#fff !important;
-    font-weight: bold;
+.brand-button {
+  background-image: linear-gradient(#14633b, #24a464) !important;
+  color: #fff !important;
+  border: 1px solid #24a464;
 }
 
-.brand-button{
-    background-color: #24a464 !important;
-    color:#fff !important;
-    border: 1px solid #24a464;
+.brand-button:disabled {
+  cursor: not-allowed;
 }
 
-.brand-button:disabled{
-    cursor: not-allowed;
+.brand-button:hover {
+  background-image: linear-gradient(#e3fcef, #fff) !important;
+  color: #24a464 !important;
+  border: 1px solid #24a464;
 }
 
-.brand-button:hover{
-    background-color: #fff !important;
-    color:#24a464 !important;
-    border: 1px solid #24a464;
-    
+.brand-centered {
+  margin: auto;
 }
 
-.brand-centered{
-    margin: auto;
+.brand-active {
+  border-bottom: 2px solid #14633b;
+  border-top: 2px solid #14633b;
+  color: #14633b !important;
+  top: 0;
 }
 
-.brand-active{
-    border-bottom: 2px solid #24a464;
-    font-weight: bold;
-    /*box-shadow: rgba(47,72,88, 0.15) 1.95px 1.95px 2.6px;*/
+.brand-table {
+  width: 100%;
 }
 
-.brand-table{
-    width: 100%;
-
+.brand-table-th {
+  width: 30%;
+  border-bottom: 2px solid #14633b;
+  text-align: center;
 }
 
-.brand-table-th{
-    width: 30%;
-    border-bottom: 2px solid #24a464;
-    text-align: center;
+.brand-table-td {
+  width: 30%;
+  border-bottom: 0.01em solid rgba(100, 112, 129, 0.25);
+  text-align: center;
 }
 
-.brand-table-td{
-    width: 30%;
-    border-bottom: .01em solid rgba(100, 112, 129, .25);
-    text-align: center;
+.amount-input {
+  text-align: right;
 }
 
-.amount-input { 
-    text-align: right; 
+.balance-container {
+  width: 100%;
+  margin: 0 auto;
 }
 
-.balance-container{
-    width: 100%;
-    margin: 0 auto;
+.balance-title {
+  width: 50%;
+  float: left;
 }
 
-.balance-title{
-    width: 50%;
-    float: left;
+.balance-amount {
+  width: 50%;
+  margin-left: 200px;
+  text-align: right;
+  font-weight: bolder;
 }
 
-.balance-amount{
-    width: 50%;
-    margin-left: 200px;
-    text-align: right;
-    font-weight: bolder;
+.label-title {
+  width: 50%;
+  float: left;
+  padding-top: 5px;
 }
 
-.label-title{
-    width: 50%;
-    float: left;
-    padding-top: 5px;
+.amount-container {
+  width: 50%;
+  margin-left: 50%;
 }
 
-.amount-container{
-    width: 50%;
-    margin-left: 50%;
+.brand-complimentary-color {
+  background-color: #ddeecb;
 }
+
+/*nav menu hover */
+#navbarNav ul li a,
+#navbarNav ul li a:after,
+#navbarNav ul li a:before {
+  /*transition: all 0.5s;*/
+  backface-visibility: hidden;
+  border: 2px solid rgba(#14633b, 0);
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  transition: all 280ms ease-in-out;
+}
+
+#navbarNav ul li a:hover {
+  color: #14633b;
+  font-weight: bold;
+}
+
+/* collapse.navbar-collapse */
+#navbarNav.collapse.navbar-collapse ul li a {
+  position: relative;
+}
+#navbarNav.collapse.navbar-collapse ul li a:after,
+#navbarNav.collapse.navbar-collapse ul li a:before,
+#navbarNav ul li a:before,
+#navbarNav ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: ".";
+  color: transparent;
+  background-image: linear-gradient(#14633b, #24a464);
+  height: 2px;
+}
+#navbarNav.collapse.navbar-collapse ul li a:hover:before,
+#navbarNav.collapse.navbar-collapse ul li a:hover:after {
+  width: 100%;
+}
+
+#navbarNav ul li a {
+  transition: all 1s;
+}
+
+#navbarNav ul li a:before,
+#navbarNav ul li a:after {
+  text-align: left;
+  content: ".";
+  margin: 0;
+  opacity: 0;
+}
+#navbarNav ul li a:hover {
+  color: #14633b;
+  z-index: 1;
+}
+
+#navbarNav ul li a:hover:before,
+#navbarNav ul li a:hover:after {
+  z-index: -10;
+  animation: fill 1s forwards;
+  opacity: 1;
+}
+
+#navbarNav ul li a:hover:before {
+    bottom: auto !important;
+    top: 0;
+    width: 100% !important;
+  }

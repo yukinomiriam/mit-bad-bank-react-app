@@ -4,9 +4,9 @@ import { MenuItems } from "./MenuItems";
 class NavBar extends Component {
   state = { activeIndex: null };
   handleClick = (index) => {
-    console.log("index" + index);
-    let activeIndex = this.state.activeIndex === index ? null : index;
-    console.log("activeIndex: " + activeIndex);
+    //console.log("index" + index);
+    let activeIndex = this.state.activeIndex === index ? index : index;
+    //console.log("activeIndex: " + activeIndex);
     this.setState({activeIndex});
     
   };
@@ -20,7 +20,7 @@ class NavBar extends Component {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="p-3" onClick={this.resetState}>
-          <img src="bank-logo.png" alt="BadBank" width="65px" />
+          <img src="bank-green-logo.svg" alt="BadBank" width="65px" />
           <a className="navbar-brand brand-text" href="#/">
             BadBank
           </a>
@@ -40,7 +40,7 @@ class NavBar extends Component {
           <ul className="navbar-nav">
             {MenuItems.map((item, index) => {
               return (
-                <li className="nav-item p-3" key={index} onClick={this.handleClick.bind(this, index)} id={index}>
+                <li className="nav-item px-3" key={index} onClick={this.handleClick.bind(this, index)} id={index}>
                   <a className={this.state.activeIndex === index ? "nav-link brand-active " : "nav-link"}  href={item.url} > 
                     {item.title}
                   </a>
