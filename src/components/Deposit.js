@@ -1,7 +1,7 @@
 import { UserContext } from "../context";
 import React from "react";
 import Card from "./Card";
-import CurrencyFormat from "react-currency-format";
+import MoneyForm from "./MoneyForm";
 
 function Deposit() {
   const ctx = React.useContext(UserContext);
@@ -55,58 +55,22 @@ function Deposit() {
     ctx.users[0].balance = newTotal;
   }
 
+  const depositComponent = (
+    <MoneyForm
+      label="Deposit"
+      total={total}
+      validateTransaction={validateDeposit}
+      handleSubmit={handleSubmit}
+      validTransaction={validTransaction}
+    />
+  );
   return (
     <>
       <Card
         header="Deposit"
         status={status}
         successFlag={isSuccess}
-        body={
-          <>
-            <div className="balance-container">
-              <div className="balance-title">
-                <h5>Balance: </h5>
-              </div>
-              <div className="balance-amount">
-                <h5>
-                  <CurrencyFormat
-                    value={total.toFixed(2)}
-                    displayType={"text"}
-                    thousandSeparator={true}
-                    prefix={"$"}
-                  />
-                </h5>
-              </div>
-            </div>
-            <br />
-            <div className="balance-container">
-              <div className="label-title">
-                <label> Deposit Amount:</label>
-              </div>
-              <div className="amount-container">
-                <input
-                  id="amtDeposit"
-                  placeholder="0"
-                  className="form-control amount-input"
-                  onChange={validateDeposit}
-                ></input>
-              </div>
-            </div>
-            <br />
-            <div className="container my-3 bg-light">
-              <div className="col-md-12 text-center">
-                <button
-                  type="submit"
-                  className="btn brand-button"
-                  onClick={handleSubmit}
-                  disabled={!validTransaction}
-                >
-                  Deposit
-                </button>
-              </div>
-            </div>
-          </>
-        }
+        body={depositComponent}
       />
     </>
   );

@@ -21,7 +21,7 @@ class NavBar extends Component {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="p-3" onClick={this.resetState}>
           <img src="bank-green-logo.svg" alt="BadBank" width="65px" />
-          <a className="navbar-brand brand-text" href="#/">
+          <a className="navbar-brand brand-text" href="#/" title="Home Page">
             BadBank
           </a>
         </div>
@@ -41,7 +41,7 @@ class NavBar extends Component {
             {MenuItems.map((item, index) => {
               return (
                 <li className="nav-item px-3" key={index} onClick={this.handleClick.bind(this, index)} id={index}>
-                  <a className={this.state.activeIndex === index ? "nav-link brand-active " : "nav-link"}  href={item.url} > 
+                  <a className={this.state.activeIndex === index ? "nav-link brand-active " : "nav-link"}  href={item.url}  title={item.title}> 
                     {item.title}
                   </a>
                 </li>
