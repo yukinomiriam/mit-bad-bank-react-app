@@ -4,11 +4,11 @@ import './css/bootstrap.css'
 
 import NavBar from "./components/navbar/NavBar";
 import Home from './components/Home';
-import CreateAccount from './components/CreateAccount';
+import CreateAccount from './components/newAccount/CreateAccount';
 import Login from './components/Login';
-import Deposit from './components/Deposit';
-import Withdraw from './components/Withdraw';
-import AllData from './components/AllData';
+import Deposit from './components/accountBalance/Deposit';
+import Withdraw from './components/accountBalance/Withdraw';
+import AllData from './components/allData/AllData';
 
 import { UserContext } from './context';
 import { HashRouter as Router, Route } from "react-router-dom";

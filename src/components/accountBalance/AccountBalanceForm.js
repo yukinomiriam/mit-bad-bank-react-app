@@ -1,7 +1,6 @@
-import React from "react";
 import CurrencyFormat from "react-currency-format";
 
-function MoneyForm(props) {
+function AccountBalanceForm(props) {
   return (
     <>
       <div className="balance-container">
@@ -50,4 +49,4 @@ function MoneyForm(props) {
   );
 }
 
-export default MoneyForm;
+export default AccountBalanceForm;

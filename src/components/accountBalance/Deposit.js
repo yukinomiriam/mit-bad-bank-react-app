@@ -1,7 +1,7 @@
-import { UserContext } from "../context";
+import { UserContext } from "../../context";
 import React from "react";
-import Card from "./Card";
-import MoneyForm from "./MoneyForm";
+import Card from "../Card";
+import AccountBalanceForm from "./AccountBalanceForm";
 
 function Deposit() {
   const ctx = React.useContext(UserContext);
@@ -55,8 +55,8 @@ function Deposit() {
     ctx.users[0].balance = newTotal;
   }
 
-  const depositComponent = (
-    <MoneyForm
+  const accountDepositComponent = (
+    <AccountBalanceForm
       label="Deposit"
       total={total}
       validateTransaction={validateDeposit}
@@ -70,7 +70,7 @@ function Deposit() {
         header="Deposit"
         status={status}
         successFlag={isSuccess}
-        body={depositComponent}
+        body={accountDepositComponent}
       />
     </>
   );

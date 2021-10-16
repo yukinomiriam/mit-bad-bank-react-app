@@ -1,7 +1,7 @@
-import { UserContext } from "../context";
+import { UserContext } from "../../context";
 import React from "react";
-import Card from "./Card";
-import MoneyForm from "./MoneyForm";
+import Card from "../Card";
+import AccountBalanceForm from "./AccountBalanceForm";
 
 function Withdraw() {
   const ctx = React.useContext(UserContext);
@@ -69,8 +69,8 @@ function Withdraw() {
     ctx.users[0].balance = newTotal;
   }
 
-  const withdrawComponent = (
-    <MoneyForm
+  const accountWithdrawComponent = (
+    <AccountBalanceForm
       label="Withdraw"
       total={total}
       validateTransaction={validateWithdraw}
@@ -85,7 +85,7 @@ function Withdraw() {
         header="Withdraw"
         status={status}
         successFlag={isSuccess}
-        body={withdrawComponent}
+        body={accountWithdrawComponent}
       />
     </>
   );
