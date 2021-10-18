@@ -9,6 +9,7 @@ import Login from './components/newAccount/Login';
 import Deposit from './components/accountBalance/Deposit';
 import Withdraw from './components/accountBalance/Withdraw';
 import AllData from './components/allData/AllData';
+import Footer from './components/Footer';
 
 import { UserContext } from './context';
 import { HashRouter as Router, Route } from "react-router-dom";
@@ -30,6 +31,7 @@ function App() {
         </div>
         </UserContext.Provider>
     </Router>
+    <Footer/>
     </>
   );
 }

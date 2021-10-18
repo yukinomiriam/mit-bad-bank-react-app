@@ -4487,7 +4487,7 @@ textarea.form-control-lg {
 
 .card-title {
   margin-bottom: 0.5rem;
-  font-family: 'Roboto', sans-serif !important;
+  /*font-family: 'Roboto', sans-serif !important;*/
 }
 
 .card-subtitle {
