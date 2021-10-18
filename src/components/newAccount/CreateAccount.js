@@ -1,7 +1,8 @@
-import { UserContext } from "../../context";
 import React from "react";
 import Card from "../Card";
 import AccountForm from "./AccountForm";
+
+import { UserContext } from "../../context";
 
 function CreateAccount() {
   const [show, setShow] = React.useState(true);
@@ -46,7 +47,7 @@ function CreateAccount() {
   }
 
   function handleCreate() {
-    console.log(name, email, password);
+    //console.log(name, email, password);
     if (!validate(name, "name")) return;
     if (!validate(email, "email")) return;
     if (!validate(password, "password")) return;
@@ -91,14 +92,17 @@ function CreateAccount() {
       handleEmailChange={handleEmailChange}
       password={password}
       handlePasswordChange={handlePasswordChange}
-      handleCreate={handleCreate}
+      handleSubmit={handleCreate}
       isDisabled={isDisabled}
+      isNewAccount={true}
+      label="Create Account"
     />
   );
 
   return (
     <Card
       header="Create Account"
+      className="card brand-centered brand-margin-top"
       status={status}
       body={
         show ? (

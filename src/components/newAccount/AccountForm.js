@@ -1,16 +1,20 @@
 function AccountForm(props) {
   return (
     <>
-      Name: <br />
-      <input
-        type="input"
-        className="form-control"
-        id="name"
-        placeholder="Enter name"
-        value={props.name}
-        onChange={props.handleNameChange}
-      />
-      <br />
+      {props.isNewAccount && (
+        <>
+          Name: <br />
+          <input
+            type="input"
+            className="form-control"
+            id="name"
+            placeholder="Enter name"
+            value={props.name}
+            onChange={props.handleNameChange}
+          />
+          <br />
+        </>
+      )}
       Email Address: <br />
       <input
         type="input"
@@ -31,15 +35,19 @@ function AccountForm(props) {
         onChange={props.handlePasswordChange}
       />
       <br />
-      <button
-        type="submit"
-        className="btn brand-button"
-        onClick={props.handleCreate}
-        disabled={props.isDisabled}
-      >
-        Create Account
-      </button>
-      <br />
+      <div className="container my-3 bg-light">
+        <div className="col-md-12 text-center">
+          <button
+            type="submit"
+            className="btn brand-button"
+            onClick={props.handleSubmit}
+            disabled={props.isDisabled}
+          >
+            {props.label}
+          </button>
+          <br />
+        </div>
+      </div>
     </>
   );
 }

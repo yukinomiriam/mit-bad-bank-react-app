@@ -1,7 +1,8 @@
-import { UserContext } from "../../context";
 import React from "react";
 import Card from "../Card";
 import AccountBalanceForm from "./AccountBalanceForm";
+
+import { UserContext } from "../../context";
 
 function Deposit() {
   const ctx = React.useContext(UserContext);
@@ -68,6 +69,7 @@ function Deposit() {
     <>
       <Card
         header="Deposit"
+        className="card brand-centered brand-margin-top"
         status={status}
         successFlag={isSuccess}
         body={accountDepositComponent}

@@ -5,7 +5,7 @@ import './css/bootstrap.css'
 import NavBar from "./components/navbar/NavBar";
 import Home from './components/Home';
 import CreateAccount from './components/newAccount/CreateAccount';
-import Login from './components/Login';
+import Login from './components/newAccount/Login';
 import Deposit from './components/accountBalance/Deposit';
 import Withdraw from './components/accountBalance/Withdraw';
 import AllData from './components/allData/AllData';
@@ -19,7 +19,7 @@ function App() {
     <NavBar/>
     <Router>  
       <UserContext.Provider value={{users:[{name:'Abel',email:'abel@mit.edu',password:'secret',balance:100, isLogged:'true'}]}}> 
-        <div className="container" style={{padding: "20px"}}>
+        <div>
           
           <Route path="/" exact component={Home} />
           <Route path="/CreateAccount/" component={CreateAccount} />

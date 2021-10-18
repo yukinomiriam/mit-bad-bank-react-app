@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { MenuItems } from "./MenuItems";
 
 class NavBar extends Component {
-  state = { activeIndex: null };
+  state = { activeIndex: 0 };
   handleClick = (index) => {
     //console.log("index" + index);
     let activeIndex = this.state.activeIndex === index ? index : index;
@@ -10,17 +10,12 @@ class NavBar extends Component {
     this.setState({activeIndex});
     
   };
-
-  resetState =() =>{
-    console.log('resetState');
-    this.setState({ activeIndex: null });
-  }
-  
+    
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="p-3" onClick={this.resetState}>
-          <img src="bank-green-logo.svg" alt="BadBank" width="65px" />
+        <div className="p-3">
+          <img src="bank-logo-black.png" alt="BadBank" width="65px" />
           <a className="navbar-brand brand-text" href="#/" title="Home Page">
             BadBank
           </a>

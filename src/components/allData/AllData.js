@@ -1,7 +1,8 @@
-import { UserContext } from "../../context";
 import React from "react";
 import Card from "../Card";
 import RowTable from "./RowTable";
+
+import { UserContext } from "../../context";
 
 function AllData() {
   const ctx = React.useContext(UserContext);
@@ -9,6 +10,7 @@ function AllData() {
     <>
       <Card
         header="All Data"
+        className="card brand-centered brand-margin-top"
         body={
           <>
             <table className="brand-table">

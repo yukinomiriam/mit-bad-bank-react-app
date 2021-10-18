@@ -1,5 +1,9 @@
 export const MenuItems =[
     {
+        title: 'Home',
+        url: '#/'
+    },
+    {
         title: 'Create Account',
         url: '#/CreateAccount/'
     },
