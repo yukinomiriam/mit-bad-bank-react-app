@@ -85,6 +85,7 @@ function Withdraw() {
       <Card
         header="Withdraw"
         className="card brand-centered brand-margin-top"
+        maxWidth="40rem"
         status={status}
         successFlag={isSuccess}
         body={accountWithdrawComponent}

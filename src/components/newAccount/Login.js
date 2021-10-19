@@ -75,6 +75,7 @@ function Login() {
     <>
     <Card
       header="Login"
+      maxWidth="40rem"
       className="card brand-centered brand-margin-top"
       status={status}
       body={

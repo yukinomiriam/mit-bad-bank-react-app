@@ -11,6 +11,7 @@ function AllData() {
       <Card
         header="All Data"
         className="card brand-centered brand-margin-top"
+        maxWidth="40rem"
         body={
           <>
             <table className="brand-table">

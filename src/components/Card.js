@@ -2,7 +2,7 @@
 function Card(props) {
 
     return (
-      <div className={props.className} style={{ maxWidth: "35rem" }}>
+      <div className={props.className} style={{ maxWidth: props.maxWidth }}>
         <div className="card-header brand-background">{props.header}</div>
         <div className="card-body">
           {props.title && <h3 className="card-title">{props.title}</h3>}

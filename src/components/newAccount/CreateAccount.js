@@ -103,6 +103,7 @@ function CreateAccount() {
     <Card
       header="Create Account"
       className="card brand-centered brand-margin-top"
+      maxWidth="40rem"
       status={status}
       body={
         show ? (
