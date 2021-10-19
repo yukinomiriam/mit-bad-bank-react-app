@@ -33,7 +33,7 @@ function AccountBalanceForm(props) {
         </div>
       </div>
       <br />
-      <div className="container my-3 bg-light">
+      <div className="container my-3">
         <div className="col-md-12 text-center">
           <button
             type="submit"
