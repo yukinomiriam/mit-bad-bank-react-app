@@ -5,10 +5,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh;
+
 }
 
 .home-background::before {
-  content: "";
+  content: '';
   background-image: url("/src/img/woman_bank.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -203,6 +205,36 @@
   margin-top: 10px;
 }
 
+@media (max-width: 575.98px) {
+  .right {
+    right: 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .right {
+    right: 0;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .right {
+    right: 0;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .right {
+    right: 0;
+  }
+}
+
+@media (max-width: 1399.98px) {
+  .right {
+    right: 0;
+  }
+}
+
 .footer {
   position: fixed;
   left: 0;
@@ -213,6 +245,19 @@
   text-align: center;
   height: 60px;
   font-size: 2.1em;
+}
+@media (max-width: 767.98px) {
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-image: linear-gradient(#14633b, #24a464) !important;
+    letter-spacing: 1px;
+    text-align: center;
+    height: 60px;
+    font-size: 1em;
+  }
 }
 .social-link {
   list-style-type: none;
@@ -226,11 +271,19 @@
   min-width: 3em;
   margin: 0 0.5em;
 }
+
+@media (max-width: 767.98px) {
+  .social-link li {
+    display: inline-block;
+    min-width: 2em;
+    margin: 0 0.5em;
+  }
+}
+
 .social-link a {
   text-decoration: none;
   display: block;
   position: relative;
   color: #fff !important;
-  padding:.2em 0
+  padding: 0.2em 0;
 }
-

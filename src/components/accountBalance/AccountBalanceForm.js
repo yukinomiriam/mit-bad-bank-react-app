@@ -9,23 +9,25 @@ function AccountBalanceForm(props) {
         </div>
         <div className="balance-amount">
           <h5>
-            <CurrencyFormat
-              value={props.total.toFixed(2)}
-              displayType={"text"}
-              thousandSeparator={true}
-              prefix={"$"}
-            />
+            <label id="amtBalance" >
+              <CurrencyFormat
+                value={props.total.toFixed(2)}
+                displayType={"text"}
+                thousandSeparator={true}
+                prefix={"$"}
+              />
+            </label>
           </h5>
         </div>
       </div>
       <br />
       <div className="balance-container">
         <div className="label-title">
-          <label> {props.label} Amount:</label>
+          <label htmlFor={`amt${props.label}`}> {props.label} Amount:</label>
         </div>
         <div className="amount-container">
           <input
-            id="amtDeposit"
+            id={`amt${props.label}`}
             placeholder="0"
             className="form-control amount-input"
             onChange={props.validateTransaction}
@@ -41,7 +43,7 @@ function AccountBalanceForm(props) {
             onClick={props.handleSubmit}
             disabled={!props.validTransaction}
           >
-            {props.label}
+            Submit {props.label}
           </button>
         </div>
       </div>
