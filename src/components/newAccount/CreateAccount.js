@@ -44,7 +44,7 @@ function CreateAccount() {
   useEffect(() => {
     let isMounted = true;
     if (status !== "") {
-      console.log(`Called useEffect Create Account`);
+      //console.log(`Called useEffect Create Account`);
       setTimeout(() => {
         if (isMounted) setStatus("");
       }, 3000);

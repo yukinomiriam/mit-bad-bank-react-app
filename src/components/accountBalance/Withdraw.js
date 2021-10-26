@@ -36,7 +36,7 @@ function Withdraw() {
   };
 
   useEffect(() => {
-    console.log(`Called useEffect Withdraw`);
+    //(`Called useEffect Withdraw`);
     let isMounted = true;
     if (status !== "") {
       //console.log(`Called useEffect`);

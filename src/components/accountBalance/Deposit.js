@@ -36,7 +36,7 @@ function Deposit() {
   };
 
   useEffect(() => {
-    console.log(`Called useEffect Deposit`);
+    //console.log(`Called useEffect Deposit`);
     let isMounted = true;
     if (status !== "") {
       //console.log(`Called useEffect`);

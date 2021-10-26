@@ -32,10 +32,10 @@ function Login() {
   }
 
   function findUser(email, password) {
-    console.log(email, password);
+    //console.log(email, password);
     let isValid = false;
     ctx.users.forEach((user) => {
-      console.log(user.email, user.password);
+      //console.log(user.email, user.password);
       if (user.email === email && user.password === password) {
         user.isLogged = "true";
         setName(user.name);
@@ -58,7 +58,7 @@ function Login() {
   useEffect(() => {
     let isMounted = true;
     if (status !== "") {
-      console.log(`Called useEffect Login`);
+      //console.log(`Called useEffect Login`);
       setTimeout(() => {
         if (isMounted) setStatus("");
       }, 3000);
