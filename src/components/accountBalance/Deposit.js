@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Card from "../Card";
 import AccountBalanceForm from "./AccountBalanceForm";
 
@@ -16,13 +16,13 @@ function Deposit() {
     let amt = event.target.value;
     //console.log("event: " + amt);
     if (amt !== "" && (Number(amt) <= 0 || amt === "-")) {
-      errorHandler("Error: Invalid amount");
+      setStatus("Error: Invalid amount");
       setIsSuccess(false);
       return setValidTransaction(false);
     }
 
     if (amt !== "" && amt !== "-" && !Number(amt)) {
-      errorHandler("Error: Please introduce numbers only");
+      setStatus("Error: Please introduce numbers only");
       setIsSuccess(false);
       return setValidTransaction(false);
     }
@@ -31,15 +31,22 @@ function Deposit() {
       return setValidTransaction(false);
     }
 
-    setStatus("");
     setValidTransaction(true);
     setAmount(Number(amt));
   };
 
-  function errorHandler(message) {
-    setStatus(message);
-    setTimeout(() => setStatus(""), 3500);
-  }
+  useEffect(() => {
+    console.log(`Called useEffect Deposit`);
+    let isMounted = true;
+    if (status !== "") {
+      //console.log(`Called useEffect`);
+      setTimeout(() => {
+        if (isMounted) setStatus("");
+      }, 3000);
+    }
+
+    return () => isMounted = false;
+  });
 
   const handleSubmit = (event) => {
     let newTotal = total + amount;
@@ -47,7 +54,7 @@ function Deposit() {
     setValidTransaction(false);
     updateUserBalance(newTotal);
     setIsSuccess(true);
-    errorHandler("Success: Your deposit has been completed");
+    setStatus("Success: Your deposit has been completed");
     event.preventDefault();
   };
 

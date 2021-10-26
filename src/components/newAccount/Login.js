@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Card from "../Card";
 import AccountForm from "./AccountForm";
 
@@ -15,7 +15,6 @@ function Login() {
   function validate(field, label) {
     if (!field) {
       setStatus(`Error:  ${label} is required `);
-      setTimeout(() => setStatus(""), 3000);
       return false;
     }
     return true;
@@ -52,18 +51,28 @@ function Login() {
       !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(e.currentTarget.value)
     ) {
       setStatus("Error: email invalid format");
-    } else {
-      setStatus("");
     }
     setEmail(e.currentTarget.value);
   }
+
+  useEffect(() => {
+    let isMounted = true;
+    if (status !== "") {
+      console.log(`Called useEffect Login`);
+      setTimeout(() => {
+        if (isMounted) setStatus("");
+      }, 3000);
+    }
+
+    return () => isMounted = false;
+  });
 
   const loginForm = (
     <AccountForm
       email={email}
       handleEmailChange={handleEmailChange}
       password={password}
-      handlePasswordChange={e => setPassword(e.currentTarget.value)}
+      handlePasswordChange={(e) => setPassword(e.currentTarget.value)}
       handleSubmit={handleLogin}
       isDisabled={false}
       isNewAccount={false}
@@ -73,22 +82,21 @@ function Login() {
 
   return (
     <>
-    <Card
-      header="Login"
-      maxWidth="40rem"
-      className="card brand-centered brand-margin-top"
-      status={status}
-      body={
-        show ? (  
-          loginForm
-        ):(
-          <>
-          <h5>Welcome  {name}</h5>
-          
-          </>
-        )
-      }
-    />
+      <Card
+        header="Login"
+        maxWidth="40rem"
+        className="card brand-centered brand-margin-top"
+        status={status}
+        body={
+          show ? (
+            loginForm
+          ) : (
+            <>
+              <h5>Welcome {name}</h5>
+            </>
+          )
+        }
+      />
     </>
   );
 }

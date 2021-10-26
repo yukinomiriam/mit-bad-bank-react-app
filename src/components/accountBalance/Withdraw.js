@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Card from "../Card";
 import AccountBalanceForm from "./AccountBalanceForm";
 
@@ -15,13 +15,13 @@ function Withdraw() {
     let amt = event.target.value;
     //console.log("event: " + amt);
     if (amt !== "" && (Number(amt) <= 0 || amt === "-")) {
-      errorHandler("Error: Invalid amount");
+      setStatus("Error: Invalid amount");
       setIsSuccess(false);
       return setValidTransaction(false);
     }
 
     if (amt !== "" && amt !== "-" && !Number(amt)) {
-      errorHandler("Error: Please introduce numbers only");
+      setStatus("Error: Please introduce numbers only");
       setIsSuccess(false);
       return setValidTransaction(false);
     }
@@ -30,21 +30,29 @@ function Withdraw() {
       return setValidTransaction(false);
     }
 
-    setStatus("");
+    //setStatus("");
     setValidTransaction(true);
     setAmount(Number(amt));
   };
 
-  function errorHandler(message) {
-    setStatus(message);
-    setTimeout(() => setStatus(""), 3500);
-  }
+  useEffect(() => {
+    console.log(`Called useEffect Withdraw`);
+    let isMounted = true;
+    if (status !== "") {
+      //console.log(`Called useEffect`);
+      setTimeout(() => {
+        if (isMounted) setStatus("");
+      }, 3000);
+    }
+
+    return () => isMounted = false;
+  });
 
   const handleSubmit = (event) => {
     let newTotal = total - amount;
     if (amount > total) {
       let newTotal = total;
-      errorHandler(
+      setStatus(
         `Error: You cannot withdraw more than ${newTotal.toLocaleString(
           "en-US",
           {
@@ -61,7 +69,7 @@ function Withdraw() {
     setValidTransaction(false);
     updateUserBalance(newTotal);
     setIsSuccess(true);
-    errorHandler("Success: Your withdrawal has been completed");
+    setStatus("Success: Your withdrawal has been completed");
     event.preventDefault();
   };
 

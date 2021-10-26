@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Card from "../Card";
 import AccountForm from "./AccountForm";
 
@@ -17,7 +17,7 @@ function CreateAccount() {
     let errorMessage = "";
     if (!field) {
       errorMessage = `Error:  ${label} is required`;
-      errorHandler(errorMessage);
+      setStatus(errorMessage);
       return false;
     }
     // validate email format
@@ -26,13 +26,13 @@ function CreateAccount() {
       !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(field)
     ) {
       errorMessage = `Error: Email has an invalid format`;
-      errorHandler(errorMessage);
+      setStatus(errorMessage);
       return false;
     }
     // validate password
     if (label === "password" && field.length < 8) {
       errorMessage = `Error: Password should have at least 8 characters`;
-      errorHandler(errorMessage);
+      setStatus(errorMessage);
       return false;
     }
     //console.log(`field: ${field}`);
@@ -41,10 +41,17 @@ function CreateAccount() {
     return true;
   }
 
-  function errorHandler(message) {
-    setStatus(message);
-    setTimeout(() => setStatus(""), 2500);
-  }
+  useEffect(() => {
+    let isMounted = true;
+    if (status !== "") {
+      console.log(`Called useEffect Create Account`);
+      setTimeout(() => {
+        if (isMounted) setStatus("");
+      }, 3000);
+    }
+
+    return () => isMounted = false;
+  },[status]);
 
   function handleCreate() {
     //console.log(name, email, password);
