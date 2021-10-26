@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+src/img/bank-person-medium.jpg
+public/test.png
+src/img/bank-family.jpg

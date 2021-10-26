@@ -5,13 +5,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 85vh;
 
 }
 
 .home-background::before {
   content: '';
-  background-image: url("/src/img/woman_bank.png");
+  background-image: url("/src/img/bank-person.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -65,6 +65,15 @@
   border-bottom: 2px solid #14633b;
   border-top: 2px solid #14633b;
   color: #14633b !important;
+  font-weight: bold !important;
+  top: 0;
+}
+
+.nav-link.active{
+  border-bottom: 2px solid #14633b;
+  border-top: 2px solid #14633b;
+  color: #14633b !important;
+  font-weight: bold !important;
   top: 0;
 }
 

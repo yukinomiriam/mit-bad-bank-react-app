@@ -6,22 +6,22 @@ function NavBar() {
     let targetEl = e.currentTarget;
     let link = targetEl.getElementsByClassName("nav-link")[0];
     let currentlyActive = Array.from(
-      document.getElementsByClassName("brand-active")
+      document.getElementsByClassName("active")
     );
-    currentlyActive.forEach((el) => el.classList.remove("brand-active"));
-    link.classList.add("brand-active");
-    console.log("Menu: " + MenuItems);
+    currentlyActive.forEach((el) => el.classList.remove("active"));
+    link.classList.add("active");
+    //console.log("Menu: " + MenuItems);
   };
 
   const pageUrl = window.location.hash;
 
   const activeItem = {
-    home: pageUrl === "#/" ? " brand-active" : "",
-    createAccount: pageUrl === "#/CreateAccount/" ? " brand-active" : "",
-    login: pageUrl === "#/Login/" ? " brand-active" : "",
-    deposit: pageUrl === "#/Deposit/" ? " brand-active" : "",
-    withdraw: pageUrl === "#/Withdraw/" ? " brand-active" : "",
-    allData: pageUrl === "#/AllData/" ? " brand-active" : "",
+    home: pageUrl === "#/" ? " active" : "",
+    createAccount: pageUrl === "#/CreateAccount/" ? " active" : "",
+    login: pageUrl === "#/Login/" ? " active" : "",
+    deposit: pageUrl === "#/Deposit/" ? " active" : "",
+    withdraw: pageUrl === "#/Withdraw/" ? " active" : "",
+    allData: pageUrl === "#/AllData/" ? " active" : "",
   };
 
   return (
@@ -43,12 +43,12 @@ function NavBar() {
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div className="collapse navbar-collapse" id="navbarNav">
+      <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul className="navbar-nav">
           {MenuItems.map(function (item, index) {
             return (
               <li
-                className="nav-item px-3"
+                className="nav-item px-4"
                 key={index}
                 onClick={(e) => handleClick(e)}
                 id={index}
