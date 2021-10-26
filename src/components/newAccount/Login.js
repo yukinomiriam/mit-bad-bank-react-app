@@ -17,6 +17,16 @@ function Login() {
       setStatus(`Error:  ${label} is required `);
       return false;
     }
+    // validate email format
+    if (
+      label === "email" &&
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(field)
+    ) {
+      const errorMessage = `Error: Email has an invalid format`;
+      setStatus(errorMessage);
+      return false;
+      
+    }
     return true;
   }
 
@@ -46,15 +56,6 @@ function Login() {
     return isValid;
   }
 
-  function handleEmailChange(e) {
-    if (
-      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(e.currentTarget.value)
-    ) {
-      setStatus("Error: email invalid format");
-    }
-    setEmail(e.currentTarget.value);
-  }
-
   useEffect(() => {
     let isMounted = true;
     if (status !== "") {
@@ -65,12 +66,12 @@ function Login() {
     }
 
     return () => isMounted = false;
-  });
+  }, [status]);
 
   const loginForm = (
     <AccountForm
       email={email}
-      handleEmailChange={handleEmailChange}
+      handleEmailChange={(e) => setEmail(e.currentTarget.value)}
       password={password}
       handlePasswordChange={(e) => setPassword(e.currentTarget.value)}
       handleSubmit={handleLogin}
