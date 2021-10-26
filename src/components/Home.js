@@ -9,7 +9,7 @@ function Home() {
           txtcolor="black"
           header="BadBank"
           title="Welcome to BadBank"
-          text="Small steps to a better future."
+          text="You're Not Just Another Customer. We're Not Just Another Bank."
           body={
             <img src="bad-bank-3d-logo.png" className="img-fluid" alt="Logo" />
           }
