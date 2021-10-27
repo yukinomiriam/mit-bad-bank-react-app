@@ -2,19 +2,17 @@ import React from "react";
 import { MenuItems } from "./MenuItems";
 
 function NavBar() {
+
   const handleClick = (e) => {
     let targetEl = e.currentTarget;
     let link = targetEl.getElementsByClassName("nav-link")[0];
-    let currentlyActive = Array.from(
-      document.getElementsByClassName("active")
-    );
-    currentlyActive.forEach((el) => el.classList.remove("active"));
+    let currentlyActive = Array.from(document.getElementsByClassName("active"));
+    currentlyActive.forEach((item) => item.classList.remove("active"));
     link.classList.add("active");
-    //console.log("Menu: " + MenuItems);
   };
 
-  const pageUrl = window.location.hash;
-
+  const pageUrl = window.location.hash === "" ? "#/" : window.location.hash;
+  
   const activeItem = {
     home: pageUrl === "#/" ? " active" : "",
     createAccount: pageUrl === "#/CreateAccount/" ? " active" : "",
@@ -43,7 +41,10 @@ function NavBar() {
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <div
+        className="collapse navbar-collapse justify-content-end"
+        id="navbarNav"
+      >
         <ul className="navbar-nav">
           {MenuItems.map(function (item, index) {
             return (
