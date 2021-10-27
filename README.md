@@ -1,4 +1,17 @@
-# Getting Started with Create React App
+# mit-bad-bank-react-app
+
+CONTENTS OF THIS FILE
+---------------------
+
+ * Description
+ * Available Scripts
+ * Maintainers
+ * License
+ 
+DESCRIPTION
+------------
+
+This project is the final requirement for module # 2 - Front End Development with React where whe demonstrate our preogress by creating a web page for a bank where it doesn't have any security but allows to create an account, login, make deposits , withdrawals and see the data stored in session.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -68,3 +81,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+MAINTAINERS
+------------
+This project is maintained by Miriam Bade.
+For any questions, you can reach out to me by email: yukinomiriam@gmail.com.
+
+### `Live Page` 
+[http://miriam-bade-bankingapp.s3-website.us-east-2.amazonaws.com/#/](http://miriam-bade-bankingapp.s3-website.us-east-2.amazonaws.com/#/)
+
+LICENSE
+------------
+[MIT License](https://github.com/yukinomiriam/mit-atm-react/blob/main/LICENSE)
