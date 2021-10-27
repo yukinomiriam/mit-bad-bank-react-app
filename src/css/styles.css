@@ -202,16 +202,17 @@
   width: 100% !important;
 }
 
+@media (min-width: 1400px) {
 .right {
   margin: auto;
-  left: 40%;
+  left: 40em;
   right: 0;
   top: 0;
   bottom: 0;
-  width: 50%;
   position: relative;
   opacity: 1;
-  margin-top: 10px;
+  margin-top: 20px;
+}
 }
 
 @media (max-width: 575.98px) {

@@ -67,6 +67,7 @@ function CreateAccount() {
     setEmail("");
     setPassword("");
     setShow(true);
+    setIsDisabled(true);
   }
 
   function handleNameChange(e) {
